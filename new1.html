@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <title>
+            Form
+        </title>
+
+        <link rel="stylesheet" href="new1.css">
+        <script>
+                function validate(form)
+                {
+                    var email2=/^\w+([\._]?\w+)*@\w+([\._]?\w+)*(\.\w{2,3})+$/;
+                    var f1=/^[a-z A-Z]+$/;
+                    var mob=/^[7-9][0-9]{9}$/
+
+                    if(f1.test(form.Fname.value))
+                    {
+                        document.getElementById("fname").innerHTML="Valid";
+                    }
+                    else
+                    {
+                        alert("Please enter fname");
+                        document.myform.Fname.focus();
+                       // document.getElementById("fname").innerHTML="Enter proper firstname";
+                        return false;
+                    }
+                    
+                    if(f1.test(form.Lname.value))
+                    {
+                        document.getElementById("lname").innerHTML="Valid";
+                    }
+                    else
+                    {
+                        alert("Please enter lname");
+                        document.myform.Lname.focus();
+                        //document.getElementById("lname").innerHTML="Enter proper lastname";
+                        return false;
+                    }
+
+                    if(email2.test(form.Email.value))
+                    {
+                        document.getElementById("mail").innerHTML="Vaild";
+                    }
+    
+                    else
+                    {
+                        alert("Please enter valid email");
+                        document.myform.Email.focus();
+                        //document.getElementById("mail").innerHTML="Enter vaild email";
+                        return false;
+                    }
+                    
+                    if(mob.test(form.contact.value))
+                    {
+                        document.getElementById("num").innerHTML="Vaild";
+                    }
+                    
+                    else
+                    {
+                        alert("Please enter proper mobile number");
+                        document.myform.contact.focus();
+                       // document.getElementById("num").innerHTML="Enter vaild mobile number";
+                        return false;
+                    }
+
+                    var radio1=document.getElementById("Gender");
+                    var i=0;
+                    alert("Select gender");
+                    for(i=0;i<radio1.length;i++)
+                    {
+                        alert("Select gender");
+                        if(!radio1[i].checked)
+                        {
+                            document.getElementById("g1").innerHTML="Select gender";
+                            return false;
+                        }
+                    }
+
+                 }
+            </script>
+    </head>
+
+    <body id=body>
+
+        <h1> Registration Form </h1>
+        <hr>
+
+        <form method="POST" name="myform" action="" onsubmit="return validate(this)">
+
+            <div>
+            <label> First name </label>
+            <input type="text" name="Fname">
+            </div> <span id="fname"> </span>
+
+            <br><br>
+
+            <div>
+            <label> Last name </label>
+            <input type="text" name="Lname">
+            </div> <span id="lname"> </span>
+
+            <br><br>
+
+            <div>
+            <label> Email </label>
+            <input id="e1" type="email" name="Email">
+            </div> <span id="mail"> </span>
+
+            <br><br>
+
+            <div>
+            <label> Date of birth </label>
+            <input type="date" name="dob" >
+            </div> 
+
+            <br><br>
+
+            <div>
+            <label> Contact </label>
+            <input id="c1" type="text" name="contact" >
+            </div>  <span id="num"> </span>
+
+            <br><br>
+
+            <div>
+            <label> Branch </label>
+            <select name="Branch" >
+                <option value="null">  </option>
+                <option value ="comp"> COMP </option>
+                <option value ="mech"> MECH </option>
+                <option value="entc"> ENTC </option>
+            </select>
+            </div>
+         
+            <div>
+            <label> Gender </label>
+            <input type="radio" name="Gender" value="male"> Male
+            <input type="radio" name="Gender" value="female">Female
+            </div> <span id="g1"> </span>
+
+            <div>
+            <input class="button" type="submit" name="submit" color="blue">
+            </div>
+
+        </form>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+body
+{
+    background-image: linear-gradient(black,white);
+    text-align:center;
+}
+    h1
+    {
+        color:rgb(229, 255, 0);
+        font-size:35pt;
+        font-weight: 200;
+        font-family:"arial";
+        text-align:center;
+    }
+
+    form
+    {
+        color:white;
+        margin: 0 auto;
+        widows: 400px;
+        border: 1px;
+        border-radius: 1em;
+        font-size:12pt;
+        font-style: italic;
+    }
+
+    label
+    {
+         color: rgb(235, 224, 224);
+    }
+
+    div+div
+    {
+        margin: 2em;
+    }
+
+    input
+    {
+        height:2em;
+        font: size 1em;
+        box-sizing: border-box;
+        
+    }
+
+    input:focus
+    {
+        border-color:rgb(175, 41, 108);
+    }
+
+    .button
+    {
+        background-color:yellow;
+    }
+    
